@@ -15,3 +15,6 @@ dotnet tool install --global dotnet-ef
 
 #database creation migration
 dotnet ef migrations add InitialCreate -v
+
+#create database
+dotnet ef database update
