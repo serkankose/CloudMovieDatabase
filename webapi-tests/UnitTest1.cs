@@ -3,11 +3,12 @@ using Xunit;
 
 namespace CloudMovieDatabase.Tests
 {
-    public class UnitTest1
+    public class TestActorsApi
     {
         [Fact]
-        public void Test1()
+        public void AddOne()
         {
+            throw new ApplicationException("ahaha");
 
         }
     }
