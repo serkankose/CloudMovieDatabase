@@ -18,3 +18,6 @@ dotnet ef migrations add InitialCreate -v
 
 #create database
 dotnet ef database update
+
+#install aspnet code generator tool
+dotnet tool install -g dotnet-aspnet-codegenerator --version 3.0.0

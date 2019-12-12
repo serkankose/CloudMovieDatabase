@@ -12,7 +12,8 @@ namespace CloudMovieDatabase.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(nullable: true)
+                    FirstName = table.Column<string>(nullable: false),
+                    LasttName = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
