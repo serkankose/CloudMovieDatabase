@@ -28,3 +28,10 @@ dotnet aspnet-codegenerator controller -outDir Controllers -name ActorsControlle
 
 #switch to InMemoryDB as sqlite doesn't support some migration actions
 dotnet add package Microsoft.EntityFrameworkCore.InMemory -v 3.0.0
+
+#move main project into webapi dir
+#create solution
+dotnet new sln
+#add project
+dotnet sln add .\webapi\CloudMovieDatabase.csproj
+
