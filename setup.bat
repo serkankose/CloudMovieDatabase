@@ -23,4 +23,4 @@ dotnet ef database update
 dotnet tool install -g dotnet-aspnet-codegenerator --version 3.0.0
 
 
-dotnet aspnet-codegenerator controller -outDir Controllers -name ActorController -api -m CloudMovieDatabase.Models.Actor -dc CloudMovieDatabase.Data.DataContext
+dotnet aspnet-codegenerator controller -outDir Controllers -name ActorsController -api -m CloudMovieDatabase.Models.Actor -dc CloudMovieDatabase.Data.DataContext

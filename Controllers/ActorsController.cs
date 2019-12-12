@@ -12,23 +12,23 @@ namespace CloudMovieDatabase.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ActorController : ControllerBase
+    public class ActorsController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public ActorController(DataContext context)
+        public ActorsController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: api/Actor
+        // GET: api/Actors
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Actor>>> GetActors()
         {
             return await _context.Actors.ToListAsync();
         }
 
-        // GET: api/Actor/5
+        // GET: api/Actors/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Actor>> GetActor(int id)
         {
@@ -42,7 +42,7 @@ namespace CloudMovieDatabase.Controllers
             return actor;
         }
 
-        // PUT: api/Actor/5
+        // PUT: api/Actors/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
@@ -74,7 +74,7 @@ namespace CloudMovieDatabase.Controllers
             return NoContent();
         }
 
-        // POST: api/Actor
+        // POST: api/Actors
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
@@ -86,7 +86,7 @@ namespace CloudMovieDatabase.Controllers
             return CreatedAtAction("GetActor", new { id = actor.Id }, actor);
         }
 
-        // DELETE: api/Actor/5
+        // DELETE: api/Actors/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Actor>> DeleteActor(int id)
         {
