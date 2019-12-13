@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CloudMovieDatabase.Data;
 using CloudMovieDatabase.Models;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace CloudMovieDatabase.Controllers
 {
