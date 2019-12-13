@@ -8,5 +8,6 @@ namespace CloudMovieDatabase.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options){}
 
         public DbSet<Actor> Actors {get; set;}
+        // public DbSet<Movie> Movies {get; set;}
     }
 }

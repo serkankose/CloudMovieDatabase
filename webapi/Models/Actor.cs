@@ -1,11 +1,13 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CloudMovieDatabase.Models
 {
     public class Actor
     {
-        internal Actor()
+        public Actor()
         {
         }
 
@@ -18,5 +20,9 @@ namespace CloudMovieDatabase.Models
         public int Id { get; set; }
         [Required] public string FirstName { get; set; }
         [Required] public string LastName { get; set; }
+        [Required] public string Aka { get; set; }
+
+
+        // public ICollection<Movie> Movies { get; set; }
     }
 }
