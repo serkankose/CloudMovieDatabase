@@ -1,7 +1,14 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace CloudMovieDatabase.Models
 {
     public class Actor
     {
+        internal Actor()
+        {
+        }
+
         public Actor(string firstName, string lastName)
         {
             FirstName = firstName;
@@ -9,7 +16,7 @@ namespace CloudMovieDatabase.Models
         }
 
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        [Required] public string FirstName { get; set; }
+        [Required] public string LastName { get; set; }
     }
 }

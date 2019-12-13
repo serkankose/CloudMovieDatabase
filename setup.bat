@@ -9,6 +9,7 @@ dotnet watch run
 #VS Code
 code -r ..\CloudMovieDatabase\
 
+#other useful commands
 
 #install dotnet-ef tool
 dotnet tool install --global dotnet-ef
