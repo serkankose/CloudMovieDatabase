@@ -20,9 +20,10 @@ namespace CloudMovieDatabase.Models
         public int Id { get; set; }
         [Required] public string FirstName { get; set; }
         [Required] public string LastName { get; set; }
-        [Required] public string Aka { get; set; }
 
+        public DateTime Birthday { get; set; }
 
-        // public ICollection<Movie> Movies { get; set; }
+        public ICollection<ActorMovie> Movies {get; set;}
+        
     }
 }
