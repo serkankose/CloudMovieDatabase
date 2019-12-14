@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
@@ -11,30 +12,6 @@ namespace CloudMovieDatabase.Tests
 {
     public class TestMoviesApi
     {
-        [Fact]
-        public void CanNOTAddMovieWithoutActors()
-        {
-            const string databaseName = "movies.CanNOTAddMovieWithoutActors";
-            using var controllerContext = CreateDataContext(databaseName);
-            var moviesController = new Controllers.MoviesController(controllerContext);
-            var postMovie = moviesController
-                .PostMovie(new Movie("Fight Club", 2000));
-
-            Assert.IsAssignableFrom<BadRequestObjectResult>(postMovie.Result.Result);
-        }
-
-        [Fact]
-        public void CanNOTAddMovieInTheFuture()
-        {
-            const string databaseName = "movies.CanNOTAddMovieInTheFuture";
-            using var controllerContext = CreateDataContext(databaseName);
-            var moviesController = new Controllers.MoviesController(controllerContext);
-            var postMovie = moviesController
-                .PostMovie(new Movie("Fight Club", 3293));
-
-            Assert.IsAssignableFrom<BadRequestObjectResult>(postMovie.Result.Result);
-        }
-
         [Fact]
         public void CanAddMovie()
         {

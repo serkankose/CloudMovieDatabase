@@ -13,9 +13,8 @@ namespace CloudMovieDatabase.Models
         }
 
         public int Id { get; set; }
-        [Required] 
-        public string Title { get; set; }
-        public uint Year { get; set; }
+        [Required] public string Title { get; set; }
+        [Required] public uint Year { get; set; }
         public string Genre{ get; set; }
 
         public virtual ICollection<ActorMovie> Actors { get; set; }
