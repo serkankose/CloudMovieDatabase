@@ -54,10 +54,14 @@ namespace CloudMovieDatabase.Controllers
             await _context.Entry(actor).Collection(a => a.Movies).LoadAsync();
 
             var actorMovies = actor
-                .Movies.Select(actorMovie => _context.Entry(actorMovie).Reference(m=>m.Movie));
+                .Movies.Select(actorMovie =>
+                {
+                    _context.Entry(actorMovie).Reference(m=>m.Movie).Load();
+                    return actorMovie;
+                }).ToList();
             
             
-            return Ok(actor.Movies.Select(movie => movie.Movie).ToList());
+            return Ok(actorMovies.Select(actorMovie => actorMovie.Movie).ToList());
         }
 
         // PUT: api/Actors/5
