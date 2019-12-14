@@ -7,6 +7,6 @@ namespace CloudMovieDatabase.Models
     {
         public int Id { get; set; }
         [Required] public string Name { get; set; }
-        public ICollection<ActorMovie> Actors { get; set; }
+        public virtual ICollection<ActorMovie> Actors { get; set; }
     }
 }

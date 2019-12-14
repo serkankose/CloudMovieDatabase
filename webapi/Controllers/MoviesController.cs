@@ -80,6 +80,8 @@ namespace CloudMovieDatabase.Controllers
         [HttpPost]
         public async Task<ActionResult<Movie>> PostMovie(Movie movie)
         {
+            if (movie.Actors==null || !movie.Actors.Any()) return BadRequest("At least one actor needed to make a movie");
+
             _context.Movies.Add(movie);
             await _context.SaveChangesAsync();
 

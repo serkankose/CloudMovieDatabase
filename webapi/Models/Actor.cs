@@ -23,7 +23,7 @@ namespace CloudMovieDatabase.Models
 
         public DateTime Birthday { get; set; }
 
-        public ICollection<ActorMovie> Movies {get; set;}
+        public virtual ICollection<ActorMovie> Movies {get; set;}
         
     }
 }
