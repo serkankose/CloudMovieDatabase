@@ -13,6 +13,13 @@ namespace CloudMovieDatabase.Data
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Actor>()
+                .Ignore(actor => actor.Filmography);
+            
+            modelBuilder.Entity<Movie>()
+                .HasIndex(movie => new {movie.Title, movie.Year})
+                .IsUnique();
+            
             modelBuilder.Entity<ActorMovie>(builder => builder.HasKey(actorMovie => new {actorMovie.ActorId, actorMovie.MovieId}));
 
             modelBuilder.Entity<ActorMovie>()

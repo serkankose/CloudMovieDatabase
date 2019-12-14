@@ -28,6 +28,14 @@ namespace CloudMovieDatabase.Controllers
             return await _context.Movies.ToListAsync();
         }
 
+        // GET: api/Movies
+        [HttpGet("year/{year}")]
+        public async Task<ActionResult<IEnumerable<Movie>>> GetMoviesByYear(uint year)
+        {
+            return await _context.Movies.Where(movie => movie.Year == year).ToListAsync();
+        }
+
+
         // GET: api/Movies/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Movie>> GetMovie(int id)
@@ -40,6 +48,30 @@ namespace CloudMovieDatabase.Controllers
             }
 
             return movie;
+        }
+
+        // GET: api/Movies/5/actors
+        [HttpGet("{id}/actors")]
+        public async Task<ActionResult<IEnumerable<Actor>>> GetMovieActors(int id)
+        {
+            var movie = await _context.Movies.FindAsync(id);
+
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            await _context.Entry(movie).Collection(a => a.Actors).LoadAsync();
+
+            var actorMovies = movie
+                .Actors.Select(actorMovie =>
+                {
+                    _context.Entry(actorMovie).Reference(m => m.Actor).Load();
+                    return actorMovie;
+                }).ToList();
+
+
+            return Ok(actorMovies.Select(actorMovie => actorMovie.Actor).ToList());
         }
 
         // PUT: api/Movies/5
@@ -80,8 +112,6 @@ namespace CloudMovieDatabase.Controllers
         [HttpPost]
         public async Task<ActionResult<Movie>> PostMovie(Movie movie)
         {
-            if (movie.Actors==null || !movie.Actors.Any()) return BadRequest("At least one actor needed to make a movie");
-
             _context.Movies.Add(movie);
             await _context.SaveChangesAsync();
 

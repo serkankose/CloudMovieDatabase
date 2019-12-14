@@ -28,7 +28,9 @@ namespace CloudMovieDatabase.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true)
+                    Title = table.Column<string>(nullable: false),
+                    Year = table.Column<long>(nullable: false),
+                    Genre = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -63,6 +65,12 @@ namespace CloudMovieDatabase.Migrations
                 name: "IX_ActorMovie_MovieId",
                 table: "ActorMovie",
                 column: "MovieId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Movies_Title_Year",
+                table: "Movies",
+                columns: new[] { "Title", "Year" },
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

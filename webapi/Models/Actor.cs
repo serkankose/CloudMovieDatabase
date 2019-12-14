@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace CloudMovieDatabase.Models
 {
@@ -23,7 +24,11 @@ namespace CloudMovieDatabase.Models
 
         public DateTime Birthday { get; set; }
 
-        public virtual ICollection<ActorMovie> Movies {get; set;}
-        
+        public virtual ICollection<ActorMovie> Movies {get; }
+
+        public IList<(int, string, uint)> Filmography => Movies?
+            .OrderBy(actorMovie => actorMovie.Movie.Year)
+            .Select((movie, i) => (i + 1, movie.Movie.Title, movie.Movie.Year)).ToList();
+
     }
 }

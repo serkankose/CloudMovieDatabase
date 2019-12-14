@@ -42,7 +42,7 @@ namespace CloudMovieDatabase.Controllers
         }
         // GET: api/Actors/5/movies
         [HttpGet("{id}/movies")]
-        public async Task<ActionResult<Movie>> GetActorMovies(int id)
+        public async Task<ActionResult<IEnumerable<Movie>>> GetActorMovies(int id)
         {
             var actor = await _context.Actors.FindAsync(id);
 
@@ -62,6 +62,38 @@ namespace CloudMovieDatabase.Controllers
             
             
             return Ok(actorMovies.Select(actorMovie => actorMovie.Movie).ToList());
+        }
+
+        // POST: api/Actors/5/movies
+        [HttpPost("{id}/movies/{movieId}")]
+        public async Task<IActionResult> LinkActorMovie(int id, int movieId)
+        {
+            var actor = await _context.Actors.FindAsync(id);
+
+            if (actor == null)
+            {
+                return NotFound($"Actor: {id}");
+            }
+
+            var movie = await _context.Movies.FindAsync(movieId);
+
+            if (movie == null)
+            {
+                return NotFound($"Movie: {movieId}");
+            }
+
+            await _context.Entry(actor).Collection(a => a.Movies).LoadAsync();
+
+            var actorMovie = new ActorMovie(){ActorId = actor.Id, MovieId = movie.Id};
+            actor.Movies.Add(actorMovie);
+
+            // _context.Entry(actor).State = EntityState.Modified;
+            // _context.Entry(actorMovie.Movie).State = EntityState.Modified;
+            // await _context.Entry(actor).Collection(a => a.Movies).LoadAsync();
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
         // PUT: api/Actors/5
