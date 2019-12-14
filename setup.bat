@@ -25,6 +25,7 @@ dotnet tool install -g dotnet-aspnet-codegenerator --version 3.0.0
 
 
 dotnet aspnet-codegenerator controller -outDir Controllers -name ActorsController -async -api -m CloudMovieDatabase.Models.Actor -dc CloudMovieDatabase.Data.DataContext
+dotnet aspnet-codegenerator controller -outDir Controllers -name MoviesController -async -api -m CloudMovieDatabase.Models.Movie -dc CloudMovieDatabase.Data.DataContext
 
 
 #switch to InMemoryDB as sqlite doesn't support some migration actions

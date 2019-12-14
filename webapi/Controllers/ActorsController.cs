@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -38,6 +39,25 @@ namespace CloudMovieDatabase.Controllers
             }
 
             return actor;
+        }
+        // GET: api/Actors/5/movies
+        [HttpGet("{id}/movies")]
+        public async Task<ActionResult<Movie>> GetActorMovies(int id)
+        {
+            var actor = await _context.Actors.FindAsync(id);
+
+            if (actor == null)
+            {
+                return NotFound();
+            }
+
+            await _context.Entry(actor).Collection(a => a.Movies).LoadAsync();
+
+            var actorMovies = actor
+                .Movies.Select(actorMovie => _context.Entry(actorMovie).Reference(m=>m.Movie));
+            
+            
+            return Ok(actor.Movies.Select(movie => movie.Movie).ToList());
         }
 
         // PUT: api/Actors/5
