@@ -19,7 +19,11 @@ namespace CloudMovieDatabase.Data
             modelBuilder.Entity<Movie>()
                 .HasIndex(movie => new {movie.Title, movie.Year})
                 .IsUnique();
-            
+
+            modelBuilder.Entity<Actor>()
+                .HasIndex(actor => new { actor.FirstName, actor.LastName, actor.Birthday })
+                .IsUnique();
+
             modelBuilder.Entity<ActorMovie>(builder => builder.HasKey(actorMovie => new {actorMovie.ActorId, actorMovie.MovieId}));
 
             modelBuilder.Entity<ActorMovie>()
