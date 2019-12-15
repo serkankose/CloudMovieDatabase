@@ -1,0 +1,666 @@
+{
+	"info": {
+		"_postman_id": "aafdfb99-7e00-4355-8050-7257f84356a5",
+		"name": "MovieDatabaseAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - Actors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/movies/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"movies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Movies by year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/movies/year/2000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"movies",
+						"year",
+						"2000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET actor movies 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET actor movies 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/actors/3/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors",
+						"3",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET actor movies 3 link",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/actors/3/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors",
+						"3",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET movie actors 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/movies/1/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"movies",
+						"1",
+						"actors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST-RobertDeNIro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"Robert\",\n\t\"LastName\": \"DeNiro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors"
+					]
+				},
+				"description": "Add Actor"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-BradPitt",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"Brad\",\n\t\"LastName\": \"Pitt\",\n\t\"Birthday\": \"1972-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors"
+					]
+				},
+				"description": "Add Actor"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-EdwardNorton",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"Edward\",\n\t\"LastName\": \"Norton\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors"
+					]
+				},
+				"description": "Add Actor"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-Edward Furlong",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"Edward\",\n\t\"LastName\": \"Furlong\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors"
+					]
+				},
+				"description": "Add Actor"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-Edward Furlong Link movie 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/actors/4/movies/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors",
+						"4",
+						"movies",
+						"2"
+					]
+				},
+				"description": "Add Actor"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-MrT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"\",\n\t\"LastName\": \"MrT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors"
+					]
+				},
+				"description": "Add Actor"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-RobertDeNIro Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"Robert\",\n\t\"LastName\": \"DeNiro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/actors/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors",
+						"1"
+					]
+				},
+				"description": "Add Actor"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-RobertDeNIro correction",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\": 1,\n\t\"FirstName\": \"Robert\",\n\t\"LastName\": \"De Niro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/actors/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors",
+						"1"
+					]
+				},
+				"description": "Add Actor"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-AlPacino",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"Al\",\n\t\"LastName\": \"Pacino\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors"
+					]
+				},
+				"description": "Add Actor"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-movie-FightClub",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Name\": \"Fight Club\",\n\t\"Actors\": [\n\t\t\t{\n\t\t\t    \"ActorId\": 2\n\t\t\t},\n\t\t\t{\n\t\t\t    \"ActorId\": 3\n\t\t\t}\n\t\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"movies"
+					]
+				},
+				"description": "Add Movie"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-movie-AmericanHistoryX",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Title\": \"American History X\",\n\t\"Year\": 1998,\n\t\"Actors\": [\n\t\t\t{\n\t\t\t    \"ActorId\": 3\n\t\t\t}\n\t\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"movies"
+					]
+				},
+				"description": "Add Movie"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-movie-In the future",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Title\": \"Why am I here?\",\n\t\"Year\": 2250,\n\t\"Actors\": [\n\t\t\t{\n\t\t\t    \"ActorId\": 3\n\t\t\t}\n\t\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"movies"
+					]
+				},
+				"description": "Add Movie"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-movie-Marchofthepenguins",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Title\": \"March of the penguins\",\n\t\"Year\": 2022\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"movies"
+					]
+				},
+				"description": "Add Movie"
+			},
+			"response": []
+		},
+		{
+			"name": "GET 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/actors/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"actors",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
