@@ -1,5 +1,8 @@
 Cloud Movie Database
 
+See API at Swagger page: http://localhost:5000/swagger/index.html 
+
+
 The cloud movie database is a simple backend project which stores information about movies and actors and provides REST Api. Please assume at least the following information is kept for each entity:
 
  
