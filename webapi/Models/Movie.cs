@@ -13,6 +13,8 @@ namespace CloudMovieDatabase.Models
         }
 
         public int Id { get; set; }
+        [Timestamp] public byte[] Timestamp { get; set; }
+
         [Required] public string Title { get; set; }
         [Required] public uint Year { get; set; }
         public string Genre{ get; set; }

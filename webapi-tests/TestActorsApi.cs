@@ -52,7 +52,7 @@ namespace CloudMovieDatabase.Tests
         [Fact]
         public void TryUpdateActorWithWrongIdReturnsBadRequest()
         {
-            const string databaseName = "actor.CanUpdateActor";
+            const string databaseName = "actor.TryUpdateActorWithWrongIdReturnsBadRequest";
             using var dataContext = CreateDataContext(databaseName);
             dataContext.Actors.Add(new Actor("Sigourney", "Weawer"));
             dataContext.Actors.Add(new Actor("Alain", "Delon"));
