@@ -1,5 +1,6 @@
 Cloud Movie Database
 
+See progress with: $>git log
 See API at Swagger page: http://localhost:5000/swagger/index.html 
 Postman collection for integration testing: MovieDatabaseAPI.postman_collection.json
 
